@@ -1,15 +1,159 @@
-// Colors extracted from Stitch config
-$primary: #c3f5ff;
-$primary-dim: #00daf3;
-$background: #0e1322;
-$surface: #1a1f2f;
-$surface-card: rgba(47, 52, 69, 0.6);
-$on-surface: #dee1f7;
+// ------------------------------------------------------------------
+// COLOR PALETTE
+// ------------------------------------------------------------------
+ 
+// Surfaces
+$surface:                   #0e1322;
+$surface-dim:               #0e1322;
+$surface-bright:            #343949;
+$surface-container-lowest:  #090e1c;
+$surface-container-low:     #161b2b;
+$surface-container:         #1a1f2f;
+$surface-container-high:    #25293a;
+$surface-container-highest: #2f3445;
+$surface-variant:           #2f3445;
+$surface-tint:              #00daf3;
+ 
+// On-surface
+$on-surface:         #dee1f7;
 $on-surface-variant: #bac9cc;
-$outline-variant: rgba(59, 73, 76, 0.3);
-
-// Fonts
-$font-header: 'Space Grotesk', sans-serif;
-$font-code: 'JetBrains Mono', monospace;
-$font-body: 'Inter', sans-serif;
-
+$inverse-surface:    #dee1f7;
+$inverse-on-surface: #2b3040;
+ 
+// Outline
+$outline:         #849396;
+$outline-variant: #3b494c;
+ 
+// Primary (Electric Cyan)
+$primary:                 #c3f5ff;
+$on-primary:              #00363d;
+$primary-container:       #00e5ff;
+$on-primary-container:    #00626e;
+$inverse-primary:         #006875;
+$primary-fixed:           #9cf0ff;
+$primary-fixed-dim:       #00daf3;
+$on-primary-fixed:        #001f24;
+$on-primary-fixed-variant:#004f58;
+ 
+// Secondary (Vibrant Blue)
+$secondary:                   #b0c6ff;
+$on-secondary:                #002d6e;
+$secondary-container:         #0068ed;
+$on-secondary-container:      #f2f3ff;
+$secondary-fixed:             #d9e2ff;
+$secondary-fixed-dim:         #b0c6ff;
+$on-secondary-fixed:          #001945;
+$on-secondary-fixed-variant:  #00429b;
+ 
+// Tertiary (Digital Violet)
+$tertiary:                    #f1e9ff;
+$on-tertiary:                 #370096;
+$tertiary-container:          #d6c9ff;
+$on-tertiary-container:       #622be5;
+$tertiary-fixed:              #e8deff;
+$tertiary-fixed-dim:          #cdbdff;
+$on-tertiary-fixed:           #20005f;
+$on-tertiary-fixed-variant:   #4f00d0;
+ 
+// Error
+$error:              #ffb4ab;
+$on-error:           #690005;
+$error-container:    #93000a;
+$on-error-container: #ffdad6;
+ 
+// Background
+$background:    #0e1322;
+$on-background: #dee1f7;
+ 
+// ------------------------------------------------------------------
+// CSS CUSTOM PROPERTIES  (consumed by components)
+// ------------------------------------------------------------------
+:root {
+  --color-surface:                   #{$surface};
+  --color-surface-dim:               #{$surface-dim};
+  --color-surface-bright:            #{$surface-bright};
+  --color-surface-container-lowest:  #{$surface-container-lowest};
+  --color-surface-container-low:     #{$surface-container-low};
+  --color-surface-container:         #{$surface-container};
+  --color-surface-container-high:    #{$surface-container-high};
+  --color-surface-container-highest: #{$surface-container-highest};
+  --color-surface-variant:           #{$surface-variant};
+  --color-surface-tint:              #{$surface-tint};
+ 
+  --color-on-surface:         #{$on-surface};
+  --color-on-surface-variant: #{$on-surface-variant};
+  --color-outline:            #{$outline};
+  --color-outline-variant:    #{$outline-variant};
+ 
+  --color-primary:                  #{$primary};
+  --color-on-primary:               #{$on-primary};
+  --color-primary-container:        #{$primary-container};
+  --color-primary-fixed:            #{$primary-fixed};
+  --color-primary-fixed-dim:        #{$primary-fixed-dim};
+  --color-on-primary-fixed:         #{$on-primary-fixed};
+ 
+  --color-secondary:                #{$secondary};
+  --color-secondary-container:      #{$secondary-container};
+  --color-secondary-fixed-dim:      #{$secondary-fixed-dim};
+  --color-on-secondary-container:   #{$on-secondary-container};
+ 
+  --color-tertiary-fixed-dim:       #{$tertiary-fixed-dim};
+ 
+  --color-background:  #{$background};
+  --color-on-background: #{$on-background};
+ 
+  // Glows
+  --glow-primary:    0 0 15px rgba(0, 218, 243, 0.3);
+  --glow-primary-lg: 0 0 40px rgba(0, 218, 243, 0.25);
+  --glow-text:       0 0 8px #{$primary-fixed-dim};
+ 
+  // Glass card
+  --glass-bg:           rgba(47, 52, 69, 0.6);
+  --glass-border:       rgba(195, 245, 255, 0.2);
+  --glass-blur:         12px;
+}
+ 
+// ------------------------------------------------------------------
+// TYPOGRAPHY SCALE
+// ------------------------------------------------------------------
+ 
+$font-headline: 'Space Grotesk', sans-serif;
+$font-body:     'Inter', sans-serif;
+$font-mono:     'JetBrains Mono', monospace;
+ 
+// Sizes
+$text-headline-xl:       64px;
+$text-headline-lg:       40px;
+$text-headline-lg-mobile:32px;
+$text-body-md:           16px;
+$text-code-sm:           14px;
+$text-label-caps:        12px;
+ 
+// ------------------------------------------------------------------
+// SPACING & LAYOUT
+// ------------------------------------------------------------------
+ 
+$spacing-base:          8px;
+$spacing-gutter:        24px;
+$margin-mobile:         20px;
+$margin-desktop:        80px;
+$container-max:         1280px;
+ 
+// ------------------------------------------------------------------
+// BORDER RADIUS
+// ------------------------------------------------------------------
+ 
+$radius-sm:   0.125rem;  // 2px  — buttons, chips
+$radius-base: 0.25rem;   // 4px  — inputs, tags
+$radius-lg:   0.5rem;    // 8px  — cards
+$radius-xl:   0.75rem;   // 12px — large panels
+$radius-full: 9999px;    // pills
+ 
+// ------------------------------------------------------------------
+// BREAKPOINTS
+// ------------------------------------------------------------------
+ 
+$bp-sm:  480px;
+$bp-md:  768px;
+$bp-lg:  1024px;
+$bp-xl:  1280px;
