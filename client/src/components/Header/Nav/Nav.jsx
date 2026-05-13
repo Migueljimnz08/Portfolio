@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 const navLinks = [
-  { label: 'hero',       href: '#hero' },
-  { label: 'stack',      href: '#stack' },
-  { label: 'projects',   href: '#projects' },
+  { label: 'hero', href: '#hero' },
+  { label: 'stack', href: '#stack' },
+  { label: 'projects', href: '#projects' },
   { label: 'experience', href: '#experience' },
-  { label: 'contact',    href: '#contact' },
+  { label: 'contact', href: '#contact' },
 ];
 
 const Nav = () => {
@@ -18,7 +18,7 @@ const Nav = () => {
             <a
               key={link.href}
               href={link.href}
-              className="navLink"
+              className="navLink" 
             >
               {link.label}
             </a>

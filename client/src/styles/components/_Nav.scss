@@ -1,0 +1,107 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+// Desktop nav wrapper
+.nav {
+    display: none;
+    align-items: center;
+    gap: v.$spacing-gutter;
+
+    @include m.respond-to('md') {
+        display: flex;
+    }
+}
+
+.navLink {
+    @include m.label-caps;
+    color: var(--color-on-surface-variant);
+    @include m.transition-base(color);
+
+    &:hover {
+        color: var(--color-primary);
+        transform: scale(1.05);
+    }
+
+    &.active {
+        color: var(--color-primary-fixed-dim);
+        border-bottom: 2px solid var(--color-primary-fixed-dim);
+        padding-bottom: 4px;
+    }
+}
+
+// Hamburger button — mobile only
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+
+    @include m.respond-to('md') {
+        display: none;
+    }
+
+    span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: var(--color-on-surface);
+        border-radius: v.$radius-full;
+        @include m.transition-base(transform opacity);
+    }
+
+    &.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    &.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    &.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
+// Mobile drawer
+.mobileMenu {
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px v.$margin-mobile;
+    background-color: var(--color-surface-container-lowest);
+    border-top: 1px solid rgba(59, 73, 76, 0.3);
+
+    &.open {
+        display: flex;
+    }
+
+    @include m.respond-to('md') {
+        display: none !important;
+    }
+}
+
+.mobileNavLink {
+    @include m.label-caps;
+    color: var(--color-on-surface-variant);
+    @include m.transition-base(color);
+
+    &:hover {
+        color: var(--color-primary);
+    }
+}
+
+// Resume button repeated inside mobile drawer
+.resumeBtn {
+    @include m.label-caps;
+    @include m.glow-primary;
+    align-self: flex-start;
+    background: var(--color-primary);
+    color: var(--color-on-primary-fixed);
+    padding: 8px 24px;
+    border-radius: v.$radius-base;
+    @include m.transition-base(transform);
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}

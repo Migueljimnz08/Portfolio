@@ -1,0 +1,51 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+.footer {
+    background-color: var(--color-surface-container-lowest);
+    border-top: 1px solid rgba(59, 73, 76, 0.2);
+}
+
+.inner {
+    @include m.container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding-block: 48px;
+    text-align: center;
+
+    @include m.respond-to('md') {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+// Brand
+.brand {
+    @include m.label-caps;
+    color: var(--color-on-surface-variant);
+}
+
+// Copyright
+.copy {
+    @include m.code-sm;
+    color: var(--color-on-surface-variant);
+}
+
+// Social links
+.links {
+    display: flex;
+    gap: v.$spacing-gutter;
+}
+
+.link {
+    @include m.code-sm;
+    color: var(--color-on-surface-variant);
+    @include m.transition-base(color);
+
+    &:hover {
+        color: var(--color-primary-fixed);
+    }
+}

@@ -1,0 +1,52 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    background-color: rgba(14, 19, 34, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(59, 73, 76, 0.3);
+}
+
+.inner {
+    @include m.flex-between;
+    @include m.container;
+    padding-block: 16px;
+}
+
+// Brand / logo text
+.logo {
+    @include m.headline-lg;
+    font-size: 20px; // intentionally compact in nav
+    color: var(--color-primary-fixed-dim);
+    letter-spacing: -0.02em;
+    @include m.transition-base(opacity);
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+// Resume CTA button — desktop only (Nav.module.scss owns the mobile copy)
+.resumeBtn {
+    @include m.label-caps;
+    @include m.glow-primary;
+    display: none;
+    background: var(--color-primary);
+    color: var(--color-on-primary-fixed);
+    padding: 8px 24px;
+    border-radius: v.$radius-base;
+    @include m.transition-base(transform);
+
+    @include m.respond-to('md') {
+        display: inline-block;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
