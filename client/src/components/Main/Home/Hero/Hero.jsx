@@ -61,7 +61,7 @@ const Hero = () => {
                   <span className="path">~ </span>
                   <span className="command">whoami</span>
                 </p>
-                <p className="terminalOutput">junior_dev_terminal</p>
+                <p className="terminalOutput">Miguel_Ángel_Jiménez_Morante</p>
 
                 <p className="terminalLine">
                   <span className="prompt">➜ </span>

@@ -20,7 +20,7 @@ const TechStacks = () => {
         </article>
 
         <article className="grid">
-          {techs.map(({tech}) => ( <TechStackCard data={tech} />))}
+          {techs.map((tech) => ( <TechStackCard key={tech.label} data={tech} />))}
         </article>
 
       </div>

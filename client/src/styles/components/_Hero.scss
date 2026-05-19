@@ -1,0 +1,207 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+.section {
+    position: relative;
+    padding-top: 128px;
+    padding-bottom: 96px;
+    overflow: hidden;
+
+    @include m.respond-to('md') {
+        padding-top: 192px;
+        padding-bottom: 160px;
+    }
+}
+
+.inner {
+    @include m.container;
+    position: relative;
+    z-index: 1;
+}
+
+.grid {
+    display: grid;
+    gap: v.$spacing-gutter;
+    align-items: center;
+    grid-template-columns: 1fr;
+
+    @include m.respond-to('lg') {
+        grid-template-columns: 7fr 5fr;
+    }
+}
+
+// ── Left ──
+.tagline {
+    @include m.code-sm;
+    color: var(--color-primary-fixed-dim);
+    display: block;
+    margin-bottom: 16px;
+}
+
+.headline {
+    @include m.headline-xl;
+    color: var(--color-on-surface);
+    margin-bottom: 24px;
+}
+
+.accent {
+    color: var(--color-primary-fixed-dim);
+    @include m.glow-text;
+}
+
+.subheading {
+    @include m.body-md;
+    color: var(--color-on-surface-variant);
+    max-width: 580px;
+    margin-bottom: 40px;
+}
+
+.ctaRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.btnPrimary {
+    @include m.label-caps;
+    @include m.glow-primary;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    padding: 16px 32px;
+    border-radius: v.$radius-base;
+    @include m.transition-base(transform);
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.icon {
+    font-size: 18px;
+}
+
+.btnGhost {
+    @include m.label-caps;
+    color: var(--color-on-surface);
+    padding: 16px 32px;
+    border: 1px solid var(--color-outline);
+    border-radius: v.$radius-base;
+    @include m.transition-base(background-color);
+
+    &:hover {
+        background-color: rgba(47, 52, 69, 0.2);
+    }
+}
+
+// ── Right — Terminal ──
+.right {
+    display: none;
+
+    @include m.respond-to('lg') {
+        display: block;
+        position: relative;
+    }
+}
+
+.terminalCard {
+    @include m.glass-card;
+    padding: 24px;
+}
+
+.terminalHeader {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(59, 73, 76, 0.3);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #ff5f56;
+        box-shadow: 18px 0 0 #ffbd2e, 36px 0 0 #27c93f;
+        margin-right: 48px;
+        flex-shrink: 0;
+    }
+}
+
+.terminalMeta {
+    @include m.code-sm;
+    color: var(--color-on-surface-variant);
+    opacity: 0.6;
+}
+
+.terminalBody {
+    @include m.code-sm;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.terminalLine {
+    .prompt {
+        color: var(--color-secondary);
+    }
+
+    .path {
+        color: var(--color-primary-fixed);
+    }
+}
+
+.terminalOutput {
+    color: var(--color-on-surface-variant);
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 8px;
+    color: var(--color-tertiary-fixed-dim);
+}
+
+.buildLine {
+    color: var(--color-primary-fixed-dim);
+}
+
+.glowBlob {
+    position: absolute;
+    z-index: -1;
+    top: -80px;
+    right: -80px;
+    width: 256px;
+    height: 256px;
+    background: var(--color-primary);
+    opacity: 0.1;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+}
+
+// Decorative brackets
+.bracketLeft,
+.bracketRight {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    opacity: 0.02;
+    user-select: none;
+    pointer-events: none;
+    line-height: 1;
+}
+
+.bracketLeft {
+    left: 0;
+}
+
+.bracketRight {
+    right: 0;
+}

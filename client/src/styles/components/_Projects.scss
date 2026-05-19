@@ -1,0 +1,57 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+.section {
+  @include m.section-padding;
+}
+
+.inner {
+  @include m.container;
+}
+
+.headerRow {
+  display:        flex;
+  flex-direction: column;
+  gap:            16px;
+  margin-bottom:  64px;
+
+  @include m.respond-to('md') {
+    flex-direction:  row;
+    align-items:     flex-end;
+    justify-content: space-between;
+  }
+}
+
+.sectionLabel {
+  @include m.code-sm;
+  color:         var(--color-primary-fixed-dim);
+  margin-bottom: 4px;
+  display:       block;
+}
+
+.sectionTitle {
+  @include m.headline-lg;
+  color: var(--color-on-surface);
+}
+
+.headerDesc {
+  @include m.body-md;
+  color:     var(--color-on-surface-variant);
+  max-width: 280px;
+  text-align: left;
+
+  @include m.respond-to('md') {
+    text-align: right;
+  }
+}
+
+// Grid that holds ProjectCard components
+.grid {
+  display:               grid;
+  gap:                   v.$spacing-gutter;
+  grid-template-columns: 1fr;
+
+  @include m.respond-to('md') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

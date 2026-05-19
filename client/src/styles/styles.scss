@@ -1,5 +1,13 @@
+@use "./views/Base";
+
 @use "./components/Header";
 @use "./components/Nav";
+@use "./components/Hero";
+@use "./components/TechStack";
+@use "./components/StackCard";
+@use "./components/Projects";
+@use "./components/ProjectCard";
 
-
+@use "./components/Contact";
 @use "./components/Footer";
+@use "./components/NotFound";

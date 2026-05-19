@@ -1,0 +1,148 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+.section {
+    @include m.section-padding;
+}
+
+.inner {
+    @include m.container;
+}
+
+.grid {
+    display: grid;
+    gap: 64px;
+    grid-template-columns: 1fr;
+
+    @include m.respond-to('lg') {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+// Left — info
+.sectionTitle {
+    @include m.headline-lg;
+    color: var(--color-on-surface);
+    margin-bottom: 24px;
+}
+
+.intro {
+    @include m.body-md;
+    color: var(--color-on-surface-variant);
+    max-width: 420px;
+    margin-bottom: 40px;
+}
+
+.infoList {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.infoIconWrap {
+    @include m.flex-center;
+    width: 48px;
+    height: 48px;
+    border-radius: v.$radius-base;
+    background: var(--color-surface-container-high);
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.infoIcon {
+    font-size: 20px;
+}
+
+.infoLabel {
+    @include m.label-caps;
+    color: var(--color-on-surface-variant);
+    margin-bottom: 4px;
+}
+
+.infoValue {
+    @include m.body-md;
+    color: var(--color-on-surface);
+}
+
+// Right — glass form
+.formCard {
+    @include m.glass-card;
+    padding: 48px;
+
+    @media (max-width: v.$bp-md) {
+        padding: 32px 24px;
+    }
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.label {
+    @include m.label-caps;
+    color: var(--color-on-surface-variant);
+}
+
+%input-base {
+    width: 100%;
+    background: var(--color-background);
+    border: 1px solid rgba(59, 73, 76, 0.5);
+    border-radius: v.$radius-base;
+    padding: 16px;
+    color: var(--color-on-surface);
+    @include m.body-md;
+    @include m.transition-base(border-color box-shadow);
+
+    &::placeholder {
+        color: rgba(186, 201, 204, 0.3);
+    }
+
+    &:focus {
+        @include m.glow-border-focus;
+    }
+}
+
+.input {
+    @extend %input-base;
+}
+
+.textarea {
+    @extend %input-base;
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submitBtn {
+    @include m.label-caps;
+    @include m.glow-primary;
+    @include m.flex-center;
+    gap: 8px;
+    width: 100%;
+    background: var(--color-primary);
+    color: var(--color-on-primary-fixed);
+    padding: 16px;
+    border-radius: v.$radius-base;
+    @include m.transition-base(transform);
+
+    &:hover {
+        transform: scale(1.02);
+    }
+
+    &:hover .sendIcon {
+        transform: translateX(4px);
+    }
+}
+
+.sendIcon {
+    font-size: 18px;
+    @include m.transition-base(transform);
+}

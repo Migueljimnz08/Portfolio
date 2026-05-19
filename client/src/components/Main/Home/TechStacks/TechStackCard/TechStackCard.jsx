@@ -4,11 +4,11 @@ const TechStackCard = ({ data }) => {
   const { icon, label } = data
 
   return (
-    <div key={label} className="chip">
-      <span className={`chipIcon material-symbols-outlined`}>
+    <div className="chip">
+      <span className={`icon material-symbols-outlined`}>
         {icon}
       </span>
-      <span className="chipLabel">{label}</span>
+      <span className="label">{label}</span>
     </div>
   );
 };

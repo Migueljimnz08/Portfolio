@@ -1,0 +1,308 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-inline: v.$margin-mobile;
+  padding-top: 80px;
+  padding-bottom: 50px;
+
+  // Matrix radial glow — also driven by JS mouse tracking via CSS var
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(0, 104, 117, 0.1) 0%,
+      rgba(14, 19, 34, 1) 100%);
+}
+
+// DECORATIVE BRACKETS
+.bracketLeft,
+.bracketRight {
+  position: absolute;
+  font-family: v.$font-headline;
+  font-size: 300px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-primary-fixed-dim);
+  opacity: 0.05;
+  user-select: none;
+  pointer-events: none;
+}
+
+.bracketLeft {
+  top: 25%;
+  left: 40px;
+}
+
+.bracketRight {
+  bottom: 25%;
+  right: 40px;
+}
+
+
+// CONTENT COLUMN
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 768px;
+  width: 100%;
+}
+
+
+// TERMINAL CARD
+.terminal {
+  width: 100%;
+  background: rgba(47, 52, 69, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 73, 76, 0.5);
+  border-radius: v.$radius-xl;
+  overflow: hidden;
+  margin-bottom: 48px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  @include m.transition-base(transform, 0.7s);
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+// Terminal chrome bar (traffic lights + path label)
+.terminalChrome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-surface-container-high);
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(59, 73, 76, 0.3);
+}
+
+.trafficLights {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+
+  &.red {
+    background-color: rgba(255, 180, 171, 0.5);
+  }
+
+  // --color-error tint
+  &.yellow {
+    background-color: rgba(176, 198, 255, 0.5);
+  }
+
+  // --color-secondary tint
+  &.green {
+    background-color: rgba(0, 218, 243, 0.5);
+  }
+
+  // primary-fixed-dim tint
+}
+
+.terminalPath {
+  @include m.code-sm;
+  color: var(--color-on-surface-variant);
+  opacity: 0.6;
+  margin: 0 auto;
+}
+
+// Terminal body
+.terminalBody {
+  padding: 32px;
+  text-align: left;
+
+  @include m.respond-to('md') {
+    padding: 48px;
+  }
+}
+
+// Prompt line
+.promptLine {
+  @include m.label-caps;
+  margin-bottom: 16px;
+}
+
+.promptUser {
+  color: var(--color-secondary-fixed-dim);
+}
+
+.promptColon {
+  color: var(--color-on-surface-variant);
+}
+
+.promptPath {
+  color: var(--color-primary-fixed-dim);
+}
+
+.promptDollar {
+  color: var(--color-on-surface-variant);
+}
+
+.promptCmd {
+  color: var(--color-on-surface);
+  margin-left: 8px;
+}
+
+// Blinking cursor after command
+.cursor::after {
+  content: '_';
+  color: var(--color-primary-fixed-dim);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+// Error output lines
+.errorOutput {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.errorLine {
+  @include m.label-caps;
+  color: var(--color-error);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+}
+
+// 404 number display
+.errorVisual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-block: 24px;
+}
+
+.errorCode {
+  font-family: v.$font-headline;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-primary-fixed-dim);
+  text-shadow: 0 0 20px rgba(0, 218, 243, 0.5);
+
+  @include m.respond-to('md') {
+    font-size: 140px;
+  }
+}
+
+.errorSymbols {
+  display: flex;
+  gap: 16px;
+  opacity: 0.4;
+  margin-top: -16px;
+
+  span {
+    font-family: v.$font-headline;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--color-primary-fixed-dim);
+  }
+}
+
+.stackTrace {
+  @include m.label-caps;
+  color: var(--color-on-surface-variant);
+  opacity: 0.7;
+}
+
+
+// COPY BLOCK
+.heading {
+  @include m.headline-xl;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+
+  // Slightly smaller on mobile since headline-xl is huge
+  font-size: clamp(2rem, 8vw, v.$text-headline-xl);
+}
+
+.subheading {
+  @include m.body-md;
+  color: var(--color-on-surface-variant);
+  max-width: 560px;
+  margin-bottom: 48px;
+}
+
+.devNull {
+  @include m.code-sm;
+  color: var(--color-primary-fixed-dim);
+}
+
+// CTA BUTTON
+.cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 40px;
+  background: var(--color-primary-fixed-dim);
+  color: var(--color-on-primary-fixed);
+  border-radius: v.$radius-base;
+  overflow: hidden;
+  @include m.label-caps;
+  @include m.glow-primary;
+  @include m.transition-base(box-shadow transform, 0.3s);
+
+  &:hover {
+    @include m.glow-primary-lg;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  // Shimmer overlay on hover
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(100%);
+    @include m.transition-base(transform, 0.3s);
+  }
+
+  &:hover::after {
+    transform: translateY(0);
+  }
+}
+
+.ctaIcon {
+  font-size: 18px;
+}

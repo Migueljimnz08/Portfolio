@@ -4,7 +4,7 @@ const ProjectCard = ({ data }) => {
   const { title, img, path, desc, links } = data
 
   return (
-    <div key={title} className="card">
+    <div className="card">
 
       <div className="imgWrapper">
         <img
