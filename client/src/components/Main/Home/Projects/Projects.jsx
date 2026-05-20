@@ -1,7 +1,18 @@
 import React from "react";
 import ProjectCard from "./ProjectCard/ProjectCard";
 
-const projects = []
+const projects = [
+  {
+    path: '~/saas-platform',
+    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBsJEK0jHD1yn-2qi1hg8CkGiVP7o2NCTt4ziukrAcnjgyPJW2SB4OLhj94T1fTxluDX-1-UcU6BcO6R71MQgFigfBK0IcJ2lZ9TzE0UEwojkQUsQtNJL_qujiT4XYPN13cW8JshpNOHrvPRHpZDTPRyc20ZyzNkegseUwXQjs--kWm2XZ4fMk5awgXfrRkRS7d6QovYxig8kBzBNIE-tYiQ1zHyzBH-nAuqlEaj8p4Jl2-rI1URTUSpWT71cJHls6DXh8la7zixchz',
+    title: 'Nebula Dashboard',
+    desc: 'A complex analytical dashboard for cloud infrastructure monitoring. Built with Next.js and Chart.js.',
+    links: [
+      { label: 'Demo', icon: 'open_in_new', href: '#', variant: 'primary' },
+      { label: 'GitHub', icon: 'terminal', href: '#', variant: 'secondary' },
+    ],
+  },
+]
 
 const Projects = () => {
   return (
@@ -21,7 +32,7 @@ const Projects = () => {
 
         {/* Cards */}
         <article className="grid">
-          {projects.map((project) => (<ProjectCard key={project.title} data={project}/>))}
+          {projects.map((project) => (<ProjectCard key={project.title} data={project} />))}
         </article>
 
       </div>
