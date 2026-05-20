@@ -15,91 +15,91 @@ const Contact = () => {
   };
 
   return (
-    <section className="section" id="contact">
-      <div className="inner">
-        <div className="grid">
+    <section className="contact_section" id="contact">
+      <div className="contact_inner">
+        <div className="contact_grid">
 
           {/* ── Left — info ── */}
-          <article className="left">
-            <h2 className="sectionTitle">Let's Collaborate</h2>
-            <p className="intro">
+          <article className="contact_left">
+            <h2 className="contact_sectionTitle">Let's Collaborate</h2>
+            <p className="contact_intro">
               Have a project in mind or looking to hire? I'm currently available
               for freelance work and junior full-time positions.
             </p>
 
-            <ul className="infoList">
-              <li className="infoItem">
-                <div className="infoIconWrap">
+            <ul className="contact_infoList">
+              <li className="contact_infoItem">
+                <div className="contact_infoIconWrap">
                   <span className={`infoIcon material-symbols-outlined`}>
                     mail
                   </span>
                 </div>
                 <div>
-                  <p className="infoLabel">Email</p>
-                  <p className="infoValue">hello@devterminal.io</p>
+                  <p className="contact_infoLabel">Email</p>
+                  <p className="contact_infoValue">hello@devterminal.io</p>
                 </div>
               </li>
 
-              <li className="infoItem">
-                <div className="infoIconWrap">
+              <li className="contact_infoItem">
+                <div className="contact_infoIconWrap">
                   <span className={`infoIcon material-symbols-outlined`}>
                     location_on
                   </span>
                 </div>
                 <div>
-                  <p className="infoLabel">Base</p>
-                  <p className="infoValue">Remote / Madrid, Spain</p>
+                  <p className="contact_infoLabel">Base</p>
+                  <p className="contact_infoValue">Remote / Madrid, Spain</p>
                 </div>
               </li>
             </ul>
           </article>
 
           {/* ── Right — form ── */}
-          <article className="formCard">
+          <article className="contact_formCard">
             <form onSubmit={handleSubmit}>
-              <div className="formGroup">
-                <label htmlFor="name" className="label">Name</label>
+              <div className="contact_formGroup">
+                <label htmlFor="name" className="contact_label">Name</label>
                 <input
                   id="name"
                   name="name"
                   type="text"
                   placeholder="John Doe"
-                  className="input"
+                  className="contact_input"
                   value={form.name}
                   onChange={handleChange}
                   required
                 />
               </div>
 
-              <div className="formGroup">
-                <label htmlFor="email" className="label">Email</label>
+              <div className="contact_formGroup">
+                <label htmlFor="email" className="contact_label">Email</label>
                 <input
                   id="email"
                   name="email"
                   type="email"
                   placeholder="john@example.com"
-                  className="input"
+                  className="contact_input"
                   value={form.email}
                   onChange={handleChange}
                   required
                 />
               </div>
 
-              <div className="formGroup">
-                <label htmlFor="message" className="label">Message</label>
+              <div className="contact_formGroup">
+                <label htmlFor="message" className="contact_label">Message</label>
                 <textarea
                   id="message"
                   name="message"
                   rows={4}
                   placeholder="Describe your project…"
-                  className="textarea"
+                  className="contact_textarea"
                   value={form.message}
                   onChange={handleChange}
                   required
                 />
               </div>
 
-              <button type="submit" className="submitBtn">
+              <button type="submit" className="contact_submitBtn">
                 Send Message
                 <span className={`sendIcon material-symbols-outlined`}>
                   send

@@ -1,42 +1,42 @@
 @use '../utils/variables' as v;
 @use '../utils/mixins' as m;
 
-.section {
+.projects_section {
   @include m.section-padding;
 }
 
-.inner {
+.projects_inner {
   @include m.container;
 }
 
-.headerRow {
-  display:        flex;
+.projects_headerRow {
+  display: flex;
   flex-direction: column;
-  gap:            16px;
-  margin-bottom:  64px;
+  gap: 16px;
+  margin-bottom: 64px;
 
   @include m.respond-to('md') {
-    flex-direction:  row;
-    align-items:     flex-end;
+    flex-direction: row;
+    align-items: flex-end;
     justify-content: space-between;
   }
 }
 
-.sectionLabel {
+.projects_sectionLabel {
   @include m.code-sm;
-  color:         var(--color-primary-fixed-dim);
+  color: var(--color-primary-fixed-dim);
   margin-bottom: 4px;
-  display:       block;
+  display: block;
 }
 
-.sectionTitle {
+.projects_sectionTitle {
   @include m.headline-lg;
   color: var(--color-on-surface);
 }
 
-.headerDesc {
+.projects_headerDesc {
   @include m.body-md;
-  color:     var(--color-on-surface-variant);
+  color: var(--color-on-surface-variant);
   max-width: 280px;
   text-align: left;
 
@@ -46,9 +46,9 @@
 }
 
 // Grid that holds ProjectCard components
-.grid {
-  display:               grid;
-  gap:                   v.$spacing-gutter;
+.projects_grid {
+  display: grid;
+  gap: v.$spacing-gutter;
   grid-template-columns: 1fr;
 
   @include m.respond-to('md') {

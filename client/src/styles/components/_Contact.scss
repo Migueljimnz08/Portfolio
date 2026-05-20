@@ -1,15 +1,15 @@
 @use '../utils/variables' as v;
 @use '../utils/mixins' as m;
 
-.section {
+.contact_section {
     @include m.section-padding;
 }
 
-.inner {
+.contact_inner {
     @include m.container;
 }
 
-.grid {
+.contact_grid {
     display: grid;
     gap: 64px;
     grid-template-columns: 1fr;
@@ -20,32 +20,32 @@
 }
 
 // Left — info
-.sectionTitle {
+.contact_sectionTitle {
     @include m.headline-lg;
     color: var(--color-on-surface);
     margin-bottom: 24px;
 }
 
-.intro {
+.contact_intro {
     @include m.body-md;
     color: var(--color-on-surface-variant);
     max-width: 420px;
     margin-bottom: 40px;
 }
 
-.infoList {
+.contact_infoList {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-.infoItem {
+.contact_infoItem {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-.infoIconWrap {
+.contact_infoIconWrap {
     @include m.flex-center;
     width: 48px;
     height: 48px;
@@ -59,19 +59,19 @@
     font-size: 20px;
 }
 
-.infoLabel {
+.contact_infoLabel {
     @include m.label-caps;
     color: var(--color-on-surface-variant);
     margin-bottom: 4px;
 }
 
-.infoValue {
+.contact_infoValue {
     @include m.body-md;
     color: var(--color-on-surface);
 }
 
 // Right — glass form
-.formCard {
+.contact_formCard {
     @include m.glass-card;
     padding: 48px;
 
@@ -80,14 +80,14 @@
     }
 }
 
-.formGroup {
+.contact_formGroup {
     display: flex;
     flex-direction: column;
     gap: 8px;
     margin-bottom: 24px;
 }
 
-.label {
+.contact_label {
     @include m.label-caps;
     color: var(--color-on-surface-variant);
 }
@@ -111,17 +111,17 @@
     }
 }
 
-.input {
+.contact_input {
     @extend %input-base;
 }
 
-.textarea {
+.contact_textarea {
     @extend %input-base;
     resize: vertical;
     min-height: 120px;
 }
 
-.submitBtn {
+.contact_submitBtn {
     @include m.label-caps;
     @include m.glow-primary;
     @include m.flex-center;
@@ -142,7 +142,7 @@
     }
 }
 
-.sendIcon {
+.contact_sendIcon {
     font-size: 18px;
     @include m.transition-base(transform);
 }

@@ -1,7 +1,7 @@
 @use '../utils/variables' as v;
 @use '../utils/mixins' as m;
 
-.page {
+.notfound_page {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -10,8 +10,8 @@
   position: relative;
   overflow: hidden;
   padding-inline: v.$margin-mobile;
-  padding-top: 80px;
-  padding-bottom: 50px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 
   // Matrix radial glow — also driven by JS mouse tracking via CSS var
   background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
@@ -20,8 +20,8 @@
 }
 
 // DECORATIVE BRACKETS
-.bracketLeft,
-.bracketRight {
+.notfound_bracketLeft,
+.notfound_bracketRight {
   position: absolute;
   font-family: v.$font-headline;
   font-size: 300px;
@@ -33,19 +33,19 @@
   pointer-events: none;
 }
 
-.bracketLeft {
+.notfound_bracketLeft {
   top: 25%;
   left: 40px;
 }
 
-.bracketRight {
+.notfound_bracketRight {
   bottom: 25%;
   right: 40px;
 }
 
 
 // CONTENT COLUMN
-.content {
+.notfound_content {
   position: relative;
   z-index: 1;
   display: flex;
@@ -58,7 +58,7 @@
 
 
 // TERMINAL CARD
-.terminal {
+.notfound_terminal {
   width: 100%;
   background: rgba(47, 52, 69, 0.6);
   backdrop-filter: blur(20px);
@@ -76,7 +76,7 @@
 }
 
 // Terminal chrome bar (traffic lights + path label)
-.terminalChrome {
+.notfound_terminalChrome {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -85,12 +85,12 @@
   border-bottom: 1px solid rgba(59, 73, 76, 0.3);
 }
 
-.trafficLights {
+.notfound_trafficLights {
   display: flex;
   gap: 6px;
 }
 
-.dot {
+.notfound_dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -112,7 +112,7 @@
   // primary-fixed-dim tint
 }
 
-.terminalPath {
+.notfound_terminalPath {
   @include m.code-sm;
   color: var(--color-on-surface-variant);
   opacity: 0.6;
@@ -120,7 +120,7 @@
 }
 
 // Terminal body
-.terminalBody {
+.notfound_terminalBody {
   padding: 32px;
   text-align: left;
 
@@ -130,7 +130,7 @@
 }
 
 // Prompt line
-.promptLine {
+.notfound_promptLine {
   @include m.label-caps;
   margin-bottom: 16px;
 }
@@ -157,7 +157,7 @@
 }
 
 // Blinking cursor after command
-.cursor::after {
+.notfound_cursor::after {
   content: '_';
   color: var(--color-primary-fixed-dim);
   animation: blink 1s step-end infinite;
@@ -176,13 +176,13 @@
 }
 
 // Error output lines
-.errorOutput {
+.notfound_errorOutput {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.errorLine {
+.notfound_errorLine {
   @include m.label-caps;
   color: var(--color-error);
   animation: pulse 2s ease-in-out infinite;
@@ -201,7 +201,7 @@
 }
 
 // 404 number display
-.errorVisual {
+.notfound_errorVisual {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -209,7 +209,7 @@
   padding-block: 24px;
 }
 
-.errorCode {
+.notfound_errorCode {
   font-family: v.$font-headline;
   font-size: 80px;
   font-weight: 700;
@@ -222,7 +222,7 @@
   }
 }
 
-.errorSymbols {
+.notfound_errorSymbols {
   display: flex;
   gap: 16px;
   opacity: 0.4;
@@ -236,7 +236,7 @@
   }
 }
 
-.stackTrace {
+.notfound_stackTrace {
   @include m.label-caps;
   color: var(--color-on-surface-variant);
   opacity: 0.7;
@@ -244,29 +244,30 @@
 
 
 // COPY BLOCK
-.heading {
+.notfound_heading {
   @include m.headline-xl;
   color: var(--color-primary);
+  margin-top: 20px;
   margin-bottom: 16px;
 
   // Slightly smaller on mobile since headline-xl is huge
   font-size: clamp(2rem, 8vw, v.$text-headline-xl);
 }
 
-.subheading {
+.notfound_subheading {
   @include m.body-md;
   color: var(--color-on-surface-variant);
   max-width: 560px;
   margin-bottom: 48px;
 }
 
-.devNull {
+.notfound_devNull {
   @include m.code-sm;
   color: var(--color-primary-fixed-dim);
 }
 
 // CTA BUTTON
-.cta {
+.notfound_cta {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -303,6 +304,6 @@
   }
 }
 
-.ctaIcon {
+.notfound_ctaIcon {
   font-size: 18px;
 }

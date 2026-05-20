@@ -45,59 +45,59 @@ const NotFound = () => {
   }, []);
 
   return (
-    <section className="page" ref={pageRef}>
+    <section className="notfound_page" ref={pageRef}>
       {/* Decorative brackets */}
-      <span className="bracketLeft" aria-hidden="true">{'{'}</span>
-      <span className="bracketRight" aria-hidden="true">{'}'}</span>
+      <span className="notfound_bracketLeft" aria-hidden="true">{'{'}</span>
+      <span className="notfound_bracketRight" aria-hidden="true">{'}'}</span>
 
-      <div className="content">
+      <div className="notfound_content">
 
         {/* ── Terminal card ── */}
-        <article className="terminal">
+        <article className="notfound_terminal">
 
           {/* Chrome bar */}
-          <div className="terminalChrome">
-            <div className="trafficLight">
-              <span className={`dot red`} aria-hidden="true" />
-              <span className={`dot yellow`} aria-hidden="true" />
-              <span className={`dot green`} aria-hidden="true" />
+          <div className="notfound_terminalChrome">
+            <div className="notfound_trafficLights">
+              <span className={`notfound_dot red`} aria-hidden="true" />
+              <span className={`notfound_dot yellow`} aria-hidden="true" />
+              <span className={`notfound_dot green`} aria-hidden="true" />
             </div>
-            <span className="terminalPath">Path: ~/errors/404.log</span>
+            <span className="notfound_terminalPath">Path: ~/errors/404.log</span>
           </div>
 
           {/* Body */}
-          <div className="terminalBody">
+          <div className="notfound_terminalBody">
 
             {/* Prompt line */}
-            <p className="promptLine">
+            <p className="notfound_promptLine">
               <span className="promptUser">user@devterminal</span>
               <span className="promptColon">:</span>
               <span className="promptPath">~</span>
               <span className="promptDollar">$</span>
               <span
-                className={`promptCmd cursor`}
+                className={`promptCmd notfound_cursor`}
                 ref={cmdRef}
                 data-text="fetch --route current_page"
               />
             </p>
 
             {/* Error output */}
-            <div className="errorOutput">
-              <p className="errorLine">
+            <div className="notfound_errorOutput">
+              <p className="notfound_errorLine">
                 [CRITICAL ERROR] Segment Fault: Memory address not found.
               </p>
 
               {/* 404 visual */}
-              <div className="errorVisual">
-                <span className="errorCode">404</span>
-                <div className="errorSymbols" aria-hidden="true">
+              <div className="notfound_errorVisual">
+                <span className="notfound_errorCode">404</span>
+                <div className="notfound_errorSymbols" aria-hidden="true">
                   <span>&lt;/&gt;</span>
                   <span>[]</span>
                   <span>{'{}'}</span>
                 </div>
               </div>
 
-              <p className="stackTrace">
+              <p className="notfound_stackTrace">
                 Stack trace: Resource.map(path) returned NULL.
               </p>
             </div>
@@ -106,18 +106,18 @@ const NotFound = () => {
         </article>
 
         {/* ── Copy ── */}
-        <h1 className="heading">Page not found</h1>
+        <h1 className="notfound_heading">Page not found</h1>
 
-        <p className="subheading">
+        <p className="notfound_subheading">
           Looks like the link you followed is broken, or the page has been
           moved to{' '}
-          <span className="devNull">/miguel/null</span>
+          <span className="notfound_devNull">/miguel/null</span>
           {' '}on our server.
         </p>
 
         {/* ── CTA ── */}
-        <Link to="/" className="cta">
-          <span className={`ctaIcon material-symbols-outlined`}>
+        <Link to="/" className="notfound_cta">
+          <span className={`notfound_ctaIcon material-symbols-outlined`}>
             keyboard_backspace
           </span>
           Back to home

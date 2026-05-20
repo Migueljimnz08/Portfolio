@@ -1,0 +1,51 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as m;
+
+.experience_section {
+    @include m.section-padding;
+    background-color: var(--color-surface-container-low);
+    position: relative;
+    overflow: hidden;
+}
+
+.experience_inner {
+    @include m.container;
+}
+
+.experience_heading {
+    margin-bottom: 64px;
+}
+
+.experience_sectionTitle {
+    @include m.headline-lg;
+    color: var(--color-on-surface);
+    margin-bottom: 4px;
+}
+
+.experience_sectionSubtitle {
+    @include m.code-sm;
+    color: var(--color-secondary-fixed-dim);
+}
+
+// Timeline wrapper + vertical line
+.experience_timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 16px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: rgba(59, 73, 76, 0.3);
+
+        @include m.respond-to('md') {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}

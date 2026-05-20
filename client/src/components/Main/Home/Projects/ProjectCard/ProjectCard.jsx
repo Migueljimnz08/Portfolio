@@ -4,30 +4,30 @@ const ProjectCard = ({ data }) => {
   const { title, img, path, desc, links } = data
 
   return (
-    <div className="card">
+    <div className="project_card">
 
-      <div className="imgWrapper">
+      <div className="project_imgWrapper">
         <img
           src={img}
           alt={title}
-          className="cardImg"
+          className="project_img"
         />
-        <span className="cardPath">{path}</span>
+        <span className="project_path">{path}</span>
       </div>
 
-      <div className="cardBody">
-        <h3 className="cardTitle">{title}</h3>
-        <p className="cardDesc">{desc}</p>
+      <div className="project_body">
+        <h3 className="project_title">{title}</h3>
+        <p className="project_desc">{desc}</p>
 
-        <div className="cardLinks">
+        <div className="project_links">
           {links.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className={`cardLink ${[link.variant]}`}
+              className={`project_link ${[link.variant]}`}
             >
               {link.label}
-              <span className={`linkIcon material-symbols-outlined`}>
+              <span className={`project_linkIcon material-symbols-outlined`}>
                 {link.icon}
               </span>
             </a>

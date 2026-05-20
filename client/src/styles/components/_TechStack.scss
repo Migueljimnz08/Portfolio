@@ -1,27 +1,27 @@
 @use '../utils/variables' as v;
 @use '../utils/mixins' as m;
 
-.section {
+.tech_section {
   @include m.section-padding;
   background-color: var(--color-surface-container-lowest);
 }
 
-.inner {
+.tech_inner {
   @include m.container;
 }
 
-.heading {
+.tech_heading {
   text-align:    center;
   margin-bottom: 64px;
 }
 
-.title {
+.tech_title {
   @include m.headline-lg;
   color:         var(--color-on-surface);
   margin-bottom: 12px;
 }
 
-.divider {
+.tech_divider {
   width:         96px;
   height:        3px;
   background:    var(--color-primary-fixed-dim);
@@ -31,7 +31,7 @@
 }
 
 // Grid that holds StackCard components
-.grid {
+.tech_grid {
   display:               grid;
   grid-template-columns: repeat(2, 1fr);
   gap:                   24px;

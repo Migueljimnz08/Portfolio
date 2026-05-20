@@ -30,17 +30,17 @@ const jobs = [
 
 const Experience = () => {
   return (
-    <section className="section" id="experience">
-      <div className="inner">
+    <section className="experience_section" id="experience">
+      <div className="experience_inner">
 
-        <div className="heading">
-          <h2 className="sectionTitle">Experience Timeline</h2>
-          <span className="sectionSubtitle">
+        <div className="experience_heading">
+          <h2 className="experience_sectionTitle">Experience Timeline</h2>
+          <span className="experience_sectionSubtitle">
             tail -f /var/log/career.log
           </span>
         </div>
 
-        <div className="timeline">
+        <div className="experience_timeline">
           {jobs.map((job) => (
             <JobCard key={job.title} {...job} />
           ))}

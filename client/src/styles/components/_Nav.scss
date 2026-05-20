@@ -14,6 +14,7 @@
 
 .navLink {
     @include m.label-caps;
+    font-size: 14px;
     color: var(--color-on-surface-variant);
     @include m.transition-base(color);
 
@@ -49,15 +50,15 @@
         @include m.transition-base(transform opacity);
     }
 
-    &.open span:nth-child(1) {
+    &.hamburger_open span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
 
-    &.open span:nth-child(2) {
+    &.hamburger_open span:nth-child(2) {
         opacity: 0;
     }
 
-    &.open span:nth-child(3) {
+    &.hamburger_open span:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
     }
 }
@@ -71,7 +72,7 @@
     background-color: var(--color-surface-container-lowest);
     border-top: 1px solid rgba(59, 73, 76, 0.3);
 
-    &.open {
+    &.mobile_open {
         display: flex;
     }
 
@@ -91,7 +92,7 @@
 }
 
 // Resume button repeated inside mobile drawer
-.resumeBtn {
+.nav_resumeBtn {
     @include m.label-caps;
     @include m.glow-primary;
     align-self: flex-start;

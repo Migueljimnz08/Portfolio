@@ -6,13 +6,13 @@
     border-top: 1px solid rgba(59, 73, 76, 0.2);
 }
 
-.inner {
+.footer_inner {
     @include m.container;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    padding-block: 48px;
+    padding-block: 42px;
     text-align: center;
 
     @include m.respond-to('md') {
@@ -23,24 +23,24 @@
 }
 
 // Brand
-.brand {
+.footer_brand {
     @include m.label-caps;
     color: var(--color-on-surface-variant);
 }
 
 // Copyright
-.copy {
+.footer_copy {
     @include m.code-sm;
     color: var(--color-on-surface-variant);
 }
 
 // Social links
-.links {
+.footer_links {
     display: flex;
     gap: v.$spacing-gutter;
 }
 
-.link {
+.footer_link {
     @include m.code-sm;
     color: var(--color-on-surface-variant);
     @include m.transition-base(color);

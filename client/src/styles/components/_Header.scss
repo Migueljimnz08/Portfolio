@@ -12,14 +12,14 @@
     border-bottom: 1px solid rgba(59, 73, 76, 0.3);
 }
 
-.inner {
+.header_inner {
     @include m.flex-between;
     @include m.container;
     padding-block: 16px;
 }
 
 // Brand / logo text
-.logo {
+.header_logo {
     @include m.headline-lg;
     font-size: 20px; // intentionally compact in nav
     color: var(--color-primary-fixed-dim);
@@ -32,7 +32,7 @@
 }
 
 // Resume CTA button — desktop only (Nav.module.scss owns the mobile copy)
-.resumeBtn {
+.header_resumeBtn {
     @include m.label-caps;
     @include m.glow-primary;
     display: none;

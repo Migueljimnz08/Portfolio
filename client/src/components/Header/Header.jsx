@@ -4,8 +4,8 @@ import Nav from "./Nav/Nav";
 const Header = () => {
   return ( 
   <header className="header">
-    <div className="inner">
-      <a href="#hero" className="logo">
+    <div className="header_inner">
+      <a href="#hero" className="header_logo">
         ~/miguel/portfolio
       </a>
 
@@ -13,7 +13,7 @@ const Header = () => {
 
       <a 
       href=""
-      className="resumeBtn"
+      className="header_resumeBtn"
       target="_blank"
       rel="noopener noreferrer"
       >

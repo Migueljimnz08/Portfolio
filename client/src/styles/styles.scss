@@ -1,13 +1,21 @@
 @use "./views/Base";
 
+// Header styles
 @use "./components/Header";
 @use "./components/Nav";
+
+//Main styles
 @use "./components/Hero";
 @use "./components/TechStack";
 @use "./components/StackCard";
 @use "./components/Projects";
 @use "./components/ProjectCard";
-
+@use "./components/Experience";
+@use "./components/JobCard";
 @use "./components/Contact";
-@use "./components/Footer";
+
 @use "./components/NotFound";
+
+//Footer styles
+@use "./components/Footer";
+

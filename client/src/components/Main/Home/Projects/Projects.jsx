@@ -16,22 +16,22 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="section" id="projects">
-      <div className="inner">
+    <section className="projects_section" id="projects">
+      <div className="projects_inner">
 
         {/* Header row */}
-        <article className="headerRow">
-          <div className="headerLeft">
-            <span className="sectionLabel">./projects --all</span>
-            <h2 className="sectionTitle">Selected Works</h2>
+        <article className="projects_headerRow">
+          <div className="projects_headerLeft">
+            <span className="projects_sectionLabel">./projects --all</span>
+            <h2 className="projects_sectionTitle">Selected Works</h2>
           </div>
-          <p className="headerDesc">
+          <p className="projects_headerDesc">
             Building robust solutions with clean code and intuitive UX.
           </p>
         </article>
 
         {/* Cards */}
-        <article className="grid">
+        <article className="projects_grid">
           {projects.map((project) => (<ProjectCard key={project.title} data={project} />))}
         </article>
 

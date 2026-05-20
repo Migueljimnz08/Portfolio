@@ -5,10 +5,29 @@
 // ------------------------------------------------------------------
 
 @mixin respond-to($breakpoint) {
-  @if $breakpoint == 'sm'  { @media (min-width: v.$bp-sm)  { @content; } }
-  @if $breakpoint == 'md'  { @media (min-width: v.$bp-md)  { @content; } }
-  @if $breakpoint == 'lg'  { @media (min-width: v.$bp-lg)  { @content; } }
-  @if $breakpoint == 'xl'  { @media (min-width: v.$bp-xl)  { @content; } }
+  @if $breakpoint =='sm' {
+    @media (min-width: v.$bp-sm) {
+      @content;
+    }
+  }
+
+  @if $breakpoint =='md' {
+    @media (min-width: v.$bp-md) {
+      @content;
+    }
+  }
+
+  @if $breakpoint =='lg' {
+    @media (min-width: v.$bp-lg) {
+      @content;
+    }
+  }
+
+  @if $breakpoint =='xl' {
+    @media (min-width: v.$bp-xl) {
+      @content;
+    }
+  }
 }
 
 // ------------------------------------------------------------------
@@ -16,13 +35,13 @@
 // ------------------------------------------------------------------
 
 @mixin glass-card {
-  background:      var(--glass-bg);
+  background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
-  border-top:      1px solid var(--glass-border);
-  border-left:     1px solid var(--glass-border);
-  border-right:    1px solid rgba(195, 245, 255, 0.05);
-  border-bottom:   1px solid rgba(195, 245, 255, 0.05);
-  border-radius:   v.$radius-xl;
+  border-top: 1px solid var(--glass-border);
+  border-left: 1px solid var(--glass-border);
+  border-right: 1px solid rgba(195, 245, 255, 0.05);
+  border-bottom: 1px solid rgba(195, 245, 255, 0.05);
+  border-radius: v.$radius-xl;
 }
 
 // ------------------------------------------------------------------
@@ -43,8 +62,8 @@
 
 @mixin glow-border-focus {
   border-color: var(--color-primary-fixed-dim);
-  box-shadow:   0 0 0 2px rgba(0, 218, 243, 0.25);
-  outline:      none;
+  box-shadow: 0 0 0 2px rgba(0, 218, 243, 0.25);
+  outline: none;
 }
 
 // ------------------------------------------------------------------
@@ -52,10 +71,10 @@
 // ------------------------------------------------------------------
 
 @mixin headline-xl {
-  font-family:    v.$font-headline;
-  font-size:      v.$text-headline-xl;
-  font-weight:    700;
-  line-height:    1.1;
+  font-family: v.$font-headline;
+  font-size: v.$text-headline-xl;
+  font-weight: 700;
+  line-height: 1.1;
   letter-spacing: -0.02em;
 
   @media (max-width: v.$bp-md) {
@@ -65,7 +84,7 @@
 
 @mixin headline-lg {
   font-family: v.$font-headline;
-  font-size:   v.$text-headline-lg;
+  font-size: v.$text-headline-lg;
   font-weight: 600;
   line-height: 1.2;
 
@@ -76,23 +95,23 @@
 
 @mixin body-md {
   font-family: v.$font-body;
-  font-size:   v.$text-body-md;
+  font-size: v.$text-body-md;
   font-weight: 400;
   line-height: 1.6;
 }
 
 @mixin code-sm {
   font-family: v.$font-mono;
-  font-size:   v.$text-code-sm;
+  font-size: v.$text-code-sm;
   font-weight: 500;
   line-height: 1.5;
 }
 
 @mixin label-caps {
-  font-family:    v.$font-mono;
-  font-size:      v.$text-label-caps;
-  font-weight:    700;
-  line-height:    1;
+  font-family: v.$font-mono;
+  font-size: v.$text-label-caps;
+  font-weight: 700;
+  line-height: 1;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -102,7 +121,7 @@
 // ------------------------------------------------------------------
 
 @mixin container {
-  max-width:     v.$container-max;
+  max-width: v.$container-max;
   margin-inline: auto;
   padding-inline: v.$margin-mobile;
 
@@ -116,14 +135,14 @@
 // ------------------------------------------------------------------
 
 @mixin flex-center {
-  display:         flex;
-  align-items:     center;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
 @mixin flex-between {
-  display:         flex;
-  align-items:     center;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -141,18 +160,16 @@
 
 @mixin scanline-overlay {
   &::after {
-    content:        '';
-    position:       fixed;
-    inset:          0;
-    background:     repeating-linear-gradient(
-      to bottom,
-      transparent 0px,
-      transparent 3px,
-      rgba(0, 218, 243, 0.015) 3px,
-      rgba(0, 218, 243, 0.015) 4px
-    );
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(to bottom,
+        transparent 0px,
+        transparent 3px,
+        rgba(0, 218, 243, 0.015) 3px,
+        rgba(0, 218, 243, 0.015) 4px);
     pointer-events: none;
-    z-index:        9999;
+    z-index: 9999;
   }
 }
 

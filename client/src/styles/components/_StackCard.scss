@@ -1,7 +1,7 @@
 @use '../utils/variables' as v;
 @use '../utils/mixins' as m;
 
-.chip {
+.stack_chip {
   @include m.glass-card;
   display:        flex;
   flex-direction: column;
@@ -16,18 +16,18 @@
     border-color: var(--color-primary);
   }
 
-  &:hover .icon {
+  &:hover .stack_icon {
     transform: scale(1.1);
   }
 }
 
-.icon {
+.stack_icon {
   font-size: 40px;
   color:     var(--color-primary);
   @include m.transition-base(transform, 0.3s);
 }
 
-.label {
+.stack_label {
   @include m.label-caps;
   color: var(--color-on-surface);
 }

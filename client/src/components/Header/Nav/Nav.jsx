@@ -27,7 +27,7 @@ const Nav = () => {
 
         {/* Hamburger — mobile */}
         <button
-          className={`hamburger ${menuOpen ? "open" : ''}`}
+          className={`hamburger ${menuOpen ? "hamburger_open" : ''}`}
           onClick={() => setMenuOpen((o) => !o)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
@@ -39,7 +39,7 @@ const Nav = () => {
  
       {/* Mobile drawer */}
       <nav
-        className={`mobileMenu ${menuOpen ? "open" : ''}`}
+        className={`mobileMenu ${menuOpen ? "mobile_open" : ''}`}
         aria-label="Mobile navigation"
       >
         {navLinks.map((link) => (
@@ -54,7 +54,7 @@ const Nav = () => {
         ))}
         <a
           href="/resume.pdf"
-          className="resumeBtn"
+          className="nav_resumeBtn"
           style={{ alignSelf: 'flex-start' }}
           target="_blank"
           rel="noopener noreferrer"
